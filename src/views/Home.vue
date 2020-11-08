@@ -26,19 +26,19 @@
     <div class="graph-preview-container">
       <div class="graph-item">
         <h3>Standard Works</h3>
-        <img src="/images/graph.jpg">
+        <img src="/images/graph.JPG">
       </div>
       <div class="graph-item">
         <h3>Sample Graph Two</h3>
-        <img src="/images/graph.jpg">
+        <img src="/images/graph.JPG">
       </div>
       <div class="graph-item">
         <h3>Sample Graph Three</h3>
-        <img src="/images/graph.jpg">
+        <img src="/images/graph.JPG">
       </div>
       <div class="graph-item">
         <h3>Sample Graph Four</h3>
-        <img src="/images/graph.jpg">
+        <img src="/images/graph.JPG">
       </div>
     </div>
   </div>
