@@ -18,27 +18,18 @@
         <img class="heading-image" src="/images/title_logo.png">
         <div class="nav-buttons-container">
           <router-link class="nav-button" to="/standard-works">Standard Works</router-link>
-          <router-link class="nav-button" to="/chronological-analysis">Chronological Analysis</router-link>
           <router-link class="nav-button" to="/word-relations">Word Relations</router-link>
+          <router-link class="nav-button" to="/gallery">Graph Gallery</router-link>
         </div>
       </div>
     </div>
     <div class="graph-preview-container">
+      <h1 style="margin: 0px auto;">Sample Graphs</h1>
       <div class="graph-item">
-        <h3>Standard Works</h3>
-        <img src="/images/graph.JPG">
+        <img src="/images/sw.JPG">
       </div>
       <div class="graph-item">
-        <h3>Sample Graph Two</h3>
-        <img src="/images/graph.JPG">
-      </div>
-      <div class="graph-item">
-        <h3>Sample Graph Three</h3>
-        <img src="/images/graph.JPG">
-      </div>
-      <div class="graph-item">
-        <h3>Sample Graph Four</h3>
-        <img src="/images/graph.JPG">
+        <img src="/images/wr.JPG">
       </div>
     </div>
   </div>
@@ -99,7 +90,7 @@ export default {
 }
 
 .graph-item img {
-  width: 500px;
+  width: 1000px;
   height: auto;
 }
 
@@ -137,6 +128,11 @@ export default {
   .graph-item {
     width: 90%;
     margin-bottom: 20px;
+  }
+
+  .graph-item img {
+    width: 350px;
+    height: auto;
   }
 }
 /*Desktop styles*/

@@ -1,17 +1,18 @@
 <template>
 <div class="wrapper">
-  <form id="searchForm" class="search-form">
+  <form id="searchForm" class="search-form" @submit.prevent="doSearch">
     <div class="page-title">
       {{title}}
     </div>
     <div class="search-container">
       <input class="search-button" type="image" src="/images/search-icon.png" border="0" alt="Submit" />
-      <input id="searchBar" class="form-control" type="text" placeholder="Search any word" aria-label="Search">
+      <input v-model="searchQuery" id="searchBar" class="form-control" type="text" placeholder="Search any word" aria-label="Search">
     </div>
     <div class="filter-container">
       <div class="filter-item" v-for="filter in filters" :key="filter.filterId">
         <label v-if="filter.filterType === 'checkbox'" :for="filter.filterId">
-          <input type="checkbox" :id="filter.filterId" :name="filter.label" :value="filter" v-model="activeFilters">
+          <input v-if="oneFilter" type="radio" :id="filter.filterId" name="group" :value="filter" v-model="activeFilters" @change="updateActiveFilters(filter)">
+          <input v-else type="checkbox" :id="filter.filterId" :name="filter.label" :value="filter" v-model="activeFilters">
           {{filter.label}}
         </label>
         <input v-else-if="filter.filterType === 'date'" :id="filter.filterId" type="text" :placeholder="filter.short" :aria-label="filter.filterId">
@@ -27,19 +28,37 @@ export default {
   props: {
     title: String,
     filters: Array,
+    oneFilter: Boolean,
   },
   data() {
     return {
-      activeFilters: []
+      activeFilters: [],
+      searchQuery: "",
     }
   },
   watch: {
-    // whenever question changes, this function will run
+    // whenever filters change, this function will run
     activeFilters: function () {
-      this.$emit('filters-updated', this.activeFilters);
+      if (this.oneFilter) {
+        this.$emit('filters-updated', [this.activeFilters]);
+      }
+      else {
+        this.$emit('filters-updated', this.activeFilters);
+      }
     }
   },
   methods: {
+    updateActiveFilters(filter) {
+      if(this.activeFilters.includes(filter)) {
+        this.activeFilters.splice(this.activeFilters.indexOf(filter), 1);
+      }
+      else {
+        this.activeFilters.push(filter);
+      }
+    },
+    doSearch() {
+      this.$emit('do-search', this.searchQuery);
+    }
   }
 }
 </script>

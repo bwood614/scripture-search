@@ -1,6 +1,6 @@
 <template>
 <div class="page">
-  <Search :title="'Chronological Analysis'" :filters="pageFilters" @filters-updated="updateActiveFilters" />
+  <Search :title="'Chronological Analysis'" :filters="pageFilters" :oneFilter="true" @filters-updated="updateActiveFilters" @doSearch="doSearch" />
   <div class="graph-container">
     <LineGraph :chart-data="datacollection"></LineGraph>
   </div>
@@ -80,7 +80,7 @@ export default {
     updateActiveFilters(newActiveFilters) {
       this.currentFilter = newActiveFilters[0];
       this.fillData();
-    }
+    },
   }
 }
 </script>

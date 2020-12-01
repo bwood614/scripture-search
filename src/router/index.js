@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import ChronologicalAnalysis from '../views/ChronologicalAnalysis.vue'
 import StandardWorks from '../views/StandardWorks.vue'
 import WordRelations from '../views/WordRelations.vue'
+import Gallery from '../views/Gallery.vue'
 
 
 Vue.use(VueRouter)
@@ -29,6 +30,11 @@ const routes = [
     path: '/word-relations',
     name: 'WordRelations',
     component: WordRelations
+  },
+  {
+    path: '/gallery',
+    name: 'Gallery',
+    component: Gallery
   },
   {
     path: '/about',

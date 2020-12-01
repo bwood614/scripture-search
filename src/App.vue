@@ -15,10 +15,10 @@
             <router-link class="nav-link" to="/standard-works">Standard Works</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/chronological-analysis">Chronological Analysis</router-link>
+            <router-link class="nav-link" to="/word-relations">Word Relations</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/word-relations">Word Relations</router-link>
+            <router-link class="nav-link" to="/gallery">Graph Gallery</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -33,8 +33,7 @@
     </nav>
     <router-view/>
     <div class='footer'>
-      <a href='https://github.com/bwood614/cp1/tree/cp2'  target='_blank'>GitHub Repository</a>
-      <a href='#'>Contact Me</a>
+      <a href='https://github.com/bwood614/scripture-search'  target='_blank'>GitHub Repository</a>
       <router-link to="/about">About</router-link>
       <a href='#'>Help</a>
     </div>
